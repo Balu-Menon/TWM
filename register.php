@@ -1,8 +1,9 @@
 <?php
+$con=mysqli_connect("mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/","adminw71zzYZ","NECB1VgLj4Nj","twm2015");
 // Check connection
 if (mysqli_connect_errno()) {
     echo mysqli_connect_error();
-    header("location: index.php");
+    
 }
 
 //validating email	
@@ -10,7 +11,7 @@ if (isset($_POST['email'])) {
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             echo "Error! Email not valid!!";
-            header("location: index.php");
+            header("location: index.html");
             }
           
 	else {
@@ -60,6 +61,7 @@ if (isset($_POST['email'])) {
 			}
 			else {
 				echo "Successfully Registered.";
+				header("location: index.html");
 			}
  	    }
 	}
