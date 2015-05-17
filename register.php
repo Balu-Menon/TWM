@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("https://twm-ieeemec2015.rhcloud.com/phpmyadmin/","adminmZNxAg2","pLCbgLcQULEK","twm");
+$con=mysqli_connect("127.2.77.2:3306","adminmZNxAg2","pLCbgLcQULEK","twm");
 // Check connection
 if (mysqli_connect_errno()) {
     echo mysqli_connect_error();
