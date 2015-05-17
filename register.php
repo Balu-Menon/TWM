@@ -1,31 +1,24 @@
 <?php
-$con=mysqli_connect("https://twm-ieeemec2015.rhcloud.com","adminmZNxAg2","pLCbgLcQULEK","twm");
+$con=mysqli_connect("https://twm-ieeemec2015.rhcloud.com/phpmyadmin/","adminmZNxAg2","pLCbgLcQULEK","twm");
 // Check connection
 if (mysqli_connect_errno()) {
-	$temp['success'] = 2;
-    $temp['error'] = mysqli_connect_error();
-    echo json_encode($temp);
+    echo mysqli_connect_error();
+    header("location: index.php");
 }
 
 //validating email	
 if (isset($_POST['email'])) {
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $temp['success'] = 2;
-            $temp['error'] = "Error! Email not valid!!";
-            echo json_encode($temp);
+            echo "Error! Email not valid!!";
+            header("location: index.php");
             }
           
 	else {
 		$sql="SELECT * FROM register WHERE email='$email'";
 		$result = mysqli_query($con,$sql);
 		$num_rows=mysqli_num_rows($result);
-		if($num_rows>0) { 
-			$temp['success'] = 2;
-            $temp['error'] = "Email already exists!!";
-            echo json_encode($temp);
-			}
-		else {    
+		{    
 			$name = stripslashes($_POST['name']);
 			$college = stripslashes($_POST['college']);
 			$branch = stripslashes($_POST['branch']);
