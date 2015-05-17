@@ -1,5 +1,4 @@
 <?php
-$con=mysqli_connect("mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/","adminmZNxAg2","pLCbgLcQULEK","twm");
 // Check connection
 if (mysqli_connect_errno()) {
     echo mysqli_connect_error();
