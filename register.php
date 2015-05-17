@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","adminmZNxAg2","pLCbgLcQULEK","twm");
+$con=mysqli_connect("https://twm-ieeemec2015.rhcloud.com","adminmZNxAg2","pLCbgLcQULEK","twm");
 // Check connection
 if (mysqli_connect_errno()) {
 	$temp['success'] = 2;
