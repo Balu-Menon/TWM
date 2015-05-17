@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","root","","twm");
+$con=mysqli_connect("localhost","adminmZNxAg2","pLCbgLcQULEK","twm");
 // Check connection
 if (mysqli_connect_errno()) {
 	$temp['success'] = 2;
